@@ -54,10 +54,23 @@ const deleteUser = async (req, res) => {
     }
 }
 
+//listar todos los usuarios
+const listUsers = async (req, res) => {
+    const query = `SELECT * FROM usuarios`;
+    try {
+        const db = await dbPromise; 
+        const [users] = await db.query(query); 
+        res.status(200).send(users);
+    } catch (error) {
+        res.status(500).send('Error al listar los usuarios');
+    }
+}
+
 
 module.exports = {
     registerUser,
     loginUser,
     editUser,
-    deleteUser
+    deleteUser,
+    listUsers
 };

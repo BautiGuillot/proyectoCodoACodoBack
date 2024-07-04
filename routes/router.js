@@ -22,6 +22,9 @@ router.put("/edit", tiendaController.editUser);
 //eliminar usuario
 router.delete("/delete", tiendaController.deleteUser);
 
+//listar todos los usuarios
+router.get("/list", tiendaController.listUsers);
+
 //5 exportamos el modulo
 module.exports = router;
 
