@@ -3,7 +3,7 @@ const app = express();
 const router = require('../routes/router');
 
 app.use(express.json());
-app.use('/tienda', router); // Ajusta la ruta base si es necesario
+app.use('/tienda', router);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
